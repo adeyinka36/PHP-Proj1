@@ -7,13 +7,16 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <?php include 'inc/functions.php'?>
-  <div class="container">
+<?php include 'inc/functions.php';?>
+<body style="background-color:<?php echo randomColor() ?>;">
+  
+  <div class="container"  >
     <div id="quote-box">
       <?php   echo printQuote($quotes)?>
     </div>
     <button id="loadQuote" onclick="window.location.reload(true)" >Show another quote</button>
+
+    <?php header("Refresh:10"); ?>
   </div>
 </body>
 </html>

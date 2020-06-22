@@ -4,6 +4,7 @@ $quotes=[
     [
        "quote"=>"The greatest glory in living lies not in never falling, but in rising every time we fall.",
        "source"=>"Nelson Mandela"
+       
     ],
     [
         "quote"=>"The way to get started is to quit talking and begin doing.",
@@ -18,13 +19,15 @@ $quotes=[
         "quote"=>"Keep your friends cose and your enemies closer",
         "source"=>"Robert Deniro",
         "citation"=>"The GodFather",
-        "year"=>"1972"
+        "year"=>"1972",
+        "genre"=>"Thriller"
     ],
     [
         "quote"=>"I'll be back",
         "source"=>"Arnold Schwarzenegger",
         "citation"=>"The Terminator",
-        "year"=>"1984"
+        "year"=>"1984",
+        "genre"=>"Action"
     ]
     ];
 
@@ -36,6 +39,12 @@ function getRandomQuote($array){
     $randomNum=rand(0,count($array)-1);
     return $array[$randomNum];
     
+}
+function randomColor(){
+    $colors=["red","green","blue","pink","grey","purple"];
+    $randnum=rand(0,count($colors)-1);
+    return $colors[$randnum];
+
 }
 
 
@@ -50,6 +59,9 @@ function printQuote($array){
   }
   if(isset($result["year"])){
       $empty.="<span class=year>".$result["year"]."</span>";
+  }
+  if(isset($result["genre"])){
+      $empty.="<span class=citation>".$result["genre"]."</span>";
   }
 
  
