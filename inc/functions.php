@@ -52,8 +52,8 @@ function randomColor(){
 function printQuote($array){
   $empty="";
   $result= getRandomQuote($array);
-  $empty.="<p class=quote>".$result["quote"]."</p>";
-  $empty.="<p class=source>".$result["source"]."</p>";
+  $empty.="<p class=quote>".$result["quote"];
+  $empty.="<p class=source>".$result["source"];
   if(isset($result["citation"])){
     $empty.="<span class=citation>".$result["citation"]."</span>";
   }
@@ -63,7 +63,8 @@ function printQuote($array){
   if(isset($result["genre"])){
       $empty.="<span class=citation>".$result["genre"]."</span>";
   }
-
+ 
+  $empty.="</p>";
  
   return $empty;
 }
